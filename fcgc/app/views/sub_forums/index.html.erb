@@ -1,0 +1,29 @@
+<h1>Listing sub_forums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_forums.each do |sub_forum| %>
+      <tr>
+        <td><%= sub_forum.name %></td>
+        <td><%= sub_forum.description %></td>
+        <td><%= sub_forum.category %></td>
+        <td><%= link_to 'Show', sub_forum %></td>
+        <td><%= link_to 'Edit', edit_sub_forum_path(sub_forum) %></td>
+        <td><%= link_to 'Destroy', sub_forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub forum', new_sub_forum_path %>

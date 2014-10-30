@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  resources :users
+
+  resources :posts
+
+  resources :topics
+
+  resources :sub_forums
+
+  resources :categories
+
   root to: 'web#index'
   get 'web/index'
+  get '/register' => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
